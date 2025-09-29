@@ -37,10 +37,16 @@
         <div class="col-lg-6 col-md-12 offset-lg-3">
           <div class="form-group">
             <label for="">Select CITY</label>
-            <select class="form-select" id="city">
+            <select class="form-select" onchange="SelectCity()" id="city">
               <option selected displabed>Select...</option>
             </select>
           </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-12 offset-lg-3">
+          <div class="form-group" id="result"></div>
         </div>
       </div>
     </div>
@@ -118,6 +124,62 @@
                 break;
             }
                 */
+      }
+
+      function SelectCity() {
+        var SelectCity = document.getElementById("city").value;
+        var ShowData = document.getElementById("result");
+
+        switch (SelectCity) {
+          case "KARACHI":
+            ShowData.innerHTML = `
+        <div class="card">
+              <div class="card-body text-center">
+                <img src="assets/images/karachi.jpg" class="img-fluid" />
+                <div class="card-title">
+                  <h5>KARACHI PAKISTAN</h5>
+                  <p class="text-muted">
+                    Karachi is the capital city of the province of Sindh,
+                    Pakistan. It is the largest city in Pakistan and 12th
+                    largest in the world, with a population of over 20 million.
+                    It is situated at the southern tip of the country along the
+                    Arabian Sea coast and formerly served as the country's
+                    capital from 1947 to 1959.
+                  </p>
+                  <a href="https://en.wikipedia.org/wiki/Karachi" class="btn btn-outline-dark btn-sm"
+                    >Expolre now</a
+                  >
+                </div>
+              </div>
+            </div>
+        `;
+            break;
+          case "ISLAMABAD":
+            ShowData.innerHTML = `
+          <div class="card">
+              <div class="card-body text-center">
+                <img src="assets/images/islamabad.jpg" class="img-fluid" />
+                <div class="card-title">
+                  <h5>Islamabad PAKISTAN</h5>
+                  <p class="text-muted">
+                    Islamabad is the capital city of Pakistan. It is the country's tenth-most populous city with a population of over 1.1 million, and is federally administered by the Pakistani government as part of the Islamabad Capital Territory
+                  </p>
+                  <a href="https://en.wikipedia.org/wiki/Karachi" class="btn btn-outline-dark btn-sm"
+                    >Expolre now</a
+                  >
+                </div>
+              </div>
+            </div>
+        
+        `;
+            break;
+          
+            
+
+          default:
+            alert("select City Please");
+            break;
+        }
       }
     </script>
 
