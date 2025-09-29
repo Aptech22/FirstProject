@@ -1,43 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Title</title>
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Title</title>
+  </head>
+  <body>
     <div class="container">
-        <h1 class="text-center fw-bold text-uppercase my-5 display-4">find data</h1>
-        <div class="row">
-            <div class="col-lg-6 col-md-12 offset-lg-3">
-                <div class="form-group">
-                    <label for="">Select Country</label>
-                    <select class="form-select" id="country">
-                        <option selected displabed>Select...</option>
-                        <option>PAKISTAN</option>
-                        <option>SAUDIA</option>
-                        <option>QATAR</option>
-                        <option>U.A.E</option>
-                    </select>
-                </div>
-            </div>
-              <div class="col-lg-6 col-md-12 offset-lg-3">
-                <div class="form-group">
-                    <label for="">Select CITY</label>
-                    <select class="form-select" id="city">
-                        <option selected displabed>Select...</option>
-                    </select>
-                </div>
-            </div>
+      <h1 class="text-center fw-bold text-uppercase my-5 display-4">
+        find data
+      </h1>
+      <div class="row">
+        <div class="col-lg-6 col-md-12 offset-lg-3">
+          <div class="form-group">
+            <label for="">Select Country</label>
+            <select class="form-select" id="country" onchange="SelectCountry()">
+              <option selected displabed>Select...</option>
+              <option>PAKISTAN</option>
+              <option>SAUDIA</option>
+              <option>QATAR</option>
+              <option>U.A.E</option>
+            </select>
+          </div>
         </div>
+        <div class="col-lg-6 col-md-12 offset-lg-3">
+          <div class="form-group">
+            <label for="">Select CITY</label>
+            <select class="form-select" id="city">
+              <option selected displabed>Select...</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
-</body>
+
+    <script>
+      function SelectCountry() {
+        var SelectCountry = document.getElementById("country").value;
+        var SelectCity = document.getElementById("city");
+
+        switch (SelectCountry) {
+          case "PAKISTAN":
+            SelectCity.innerHTML = `
+            <option selected disabled>Select...</option>
+            <option>KARACHI</option>
+            <option>ISLAMABAD</option>
+            <option>LAHORE</option>
+            <option>HYDERABAD</option>
+        `;
+            break;
+
+          case "SAUDIA":
+            SelectCity.innerHTML = `
+            <option selected disabled>Select...</option>
+            <option>RIYADH</option>
+            <option>JEDDAH</option>
+            <option>MAKKAH</option>
+            <option>MADINAH</option>
+            <option>DAMMAM</option>
+        `;
+            break;
+
+          case "QATAR":
+            SelectCity.innerHTML = `
+            <option selected disabled>Select...</option>
+            <option>DOHA</option>
+            <option>AL RAYYAN</option>
+            <option>AL WAKRAH</option>
+            <option>UMM SALAL</option>
+        `;
+            break;
+
+          case "U.A.E":
+            SelectCity.innerHTML = `
+            <option selected disabled>Select...</option>
+            <option>DUBAI</option>
+            <option>ABU DHABI</option>
+            <option>SHARJAH</option>
+            <option>AJMAN</option>
+            <option>FUJAIRAH</option>
+        `;
+            break;
+
+          default:
+            alert("Please Select Combobox value.");
+            break;
+        }
+
+        /*
+            switch(SelectCountry)
+            {
+                case "PAKISTAN":
+                    SelectCity.innerHTML=`
+                        <option selected displabed>Select...</option>
+                        <option>KARACHI</option>
+                        <option>ISLAMABAD</option>
+                        <option>LAHORE</option>
+                        <option>HYDERABAD</option>
+                    `;
+                break;
+                case "SAUDIA":break;
+                case "QATAR":break;
+                case "U.A.E":break;
+
+                default:alert("Please Select Combobox value.");
+                break;
+            }
+                */
+      }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  </body>
 </html>
